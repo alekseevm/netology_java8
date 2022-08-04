@@ -2,10 +2,10 @@ package ru.netology.stats;
 
 public class StatsService {
 
-    public int minSales(int[] sales) {
+    public int minSales(long[] sales) {
         int minMonth = 0;
         int month = 0; // переменная для индекса рассматриваемого месяца в массиве
-        for (int sale : sales) {
+        for (long sale : sales) {
             // sales[minMonth] - продажи в месяце minMonth
             // sale - продажи в рассматриваемом месяце
             if (sale <= sales[minMonth]) {
@@ -16,27 +16,22 @@ public class StatsService {
         return minMonth + 1;
     }
 
-    public int summSales(int[] sales1) {
+    public int summSales(long[] sales) {
         int summ = 0;
-        for (int x : sales1)
-            summ += x;
+        for (long sale : sales)
+            summ += sale;
         return summ;
     }
 
-    public int averageSales(int[] sales2) {
-        int summ = 0;
-        int average;
-        for (int x : sales2)
-            summ += x;
-        average = summ / 12;
-        return average;
+    public int averageSales(long[] sales) {
+        return summSales(sales) / 12;
     }
 
-    public int maxSales(int[] sales3) {
+    public int maxSales(long[] sales) {
         int maxMonth = 0;
         int month = 0;
-        for (int x : sales3) {
-            if (x >= sales3[maxMonth]) {
+        for (long sale : sales) {
+            if (sale >= sales[maxMonth]) {
                 maxMonth = month;
             }
             month = month + 1;
@@ -44,34 +39,25 @@ public class StatsService {
         return maxMonth + 1;
     }
 
-    public int averageMin(int[] sales4) {
+    public int averageMin(long[] sales) {
         int summ = 0;
-        int average;
-        int averageMin = 0;
-        for (int x : sales4)
-            summ += x;
-        average = summ / 12;
-        for (int sale : sales4) {
-            if (sale < average) {
-                averageMin += 1;
+        for (long sale : sales) {
+            if (sale < averageSales(sales)) {
+                summ++;
             }
         }
-        return averageMin;
+        return summ;
     }
 
-    public int averageMax(int[] sales5) {
+
+    public int averageMax(long[] sales) {
         int summ = 0;
-        int average;
-        int averageMax = 0;
-        for (int x : sales5)
-            summ += x;
-        average = summ / 12;
-        for (int sale : sales5) {
-            if (sale > average) {
-                averageMax += 1;
+        for (long sale : sales) {
+            if (sale > averageSales(sales)) {
+                summ++;
             }
         }
-        return averageMax;
+        return summ;
     }
 }
 

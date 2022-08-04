@@ -1,4 +1,5 @@
 package ru.netology.stats;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -7,7 +8,7 @@ public class StatServiceTest {
     public void shouldFindMinMonth() {
         StatsService service = new StatsService();
 
-        int[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedDay = 9;
         int actualDay = service.minSales(month);
@@ -19,7 +20,7 @@ public class StatServiceTest {
     public void shouldFindSumm() {
         StatsService service = new StatsService();
 
-        int[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 180;
         int actual = service.summSales(month);
@@ -30,7 +31,7 @@ public class StatServiceTest {
     public void shouldFindAverage() {
         StatsService service = new StatsService();
 
-        int[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 15;
         int actual = service.averageSales(month);
@@ -41,7 +42,7 @@ public class StatServiceTest {
     public void shouldFindMaxMonth() {
         StatsService service = new StatsService();
 
-        int[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 8;
         int actual = service.maxSales(month);
@@ -53,7 +54,7 @@ public class StatServiceTest {
     public void shouldFindMinAverage() {
         StatsService service = new StatsService();
 
-        int[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 5;
         int actual = service.averageMin(month);
@@ -65,7 +66,7 @@ public class StatServiceTest {
     public void shouldFindMaxAverage() {
         StatsService service = new StatsService();
 
-        int[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 5;
         int actual = service.averageMax(month);
